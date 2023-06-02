@@ -1,0 +1,45 @@
+<div class="container" >
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="text-center">
+                    <h3>Teacher Signup</h3>
+                    <hr />
+                    <p class="text-danger fw-bold">( * ) fields are mandatory</p>
+                </div>
+                <form [formGroup]="signupForm"(ngSubmit)="signUp()">
+                    <div class="mb-3">
+                        <label for="Name" class="form-label">Name <span class="text-danger fw-bold">*</span></label>
+                        <input formControlName="Name" placeholder="Enter name" type="text" class="form-control" id="Name" required>
+                        <small *ngIf="signupForm.get('Name')?.hasError('required') && signupForm.get('Name')?.touched && signupForm.get('Name')?.invalid" class="text-danger">Name is required</small>
+                        <small *ngIf="signupForm.get('Name')?.hasError('minlength') && signupForm.get('Name')?.touched && signupForm.get('Name')?.invalid" class="text-danger">Name should be greater then 3 chars</small>
+                        <small *ngIf="signupForm.get('Name')?.hasError('maxlength') && signupForm.get('Name')?.touched && signupForm.get('Name')?.invalid" class="text-danger">Name should be less then 20 chars</small>
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="MobileNo" class="form-label">Mobile No <span class="text-danger fw-bold">*</span></label>
+                        <input formControlName="MobileNo" placeholder="Enter Mobile No" type="text" class="form-control" id="MobileNo" required>
+                         <small *ngIf="signupForm.get('MobileNo')?.hasError('required') && signupForm.get('MobileNo')?.invalid && signupForm.get('MobileNo')?.touched" class="text-danger">Mobile No is required</small>
+                         <small *ngIf="signupForm.get('MobileNo')?.hasError('minlength') && signupForm.get('MobileNo')?.invalid && signupForm.get('MobileNo')?.touched" class="text-danger">Mobile number should of 10 digit</small>
+                         <small *ngIf="signupForm.get('MobileNo')?.hasError('maxlength') && signupForm.get('MobileNo')?.invalid && signupForm.get('MobileNo')?.touched" class="text-danger">Mobile number should of 10 digit</small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Email" class="form-label"> Email<span class="text-danger fw-bold"> *</span></label>
+                        <input formControlName="Email" placeholder="Enter Email" type="email" class="form-control" id="Email" required>
+                        <small *ngIf="signupForm.get('Email')?.hasError('required') && signupForm.get('Email')?.touched && signupForm.get('Email')?.invalid" class="text-danger">Email is required</small>
+                        <small *ngIf="signupForm.get('Email')?.hasError('pattern') && signupForm.get('Email')?.touched && signupForm.get('Email')?.invalid" class="text-danger">Not a valid email format</small>
+                        
+                    </div>
+                    <div class="mb-3">
+                        <label for="Password" class="form-label">Password <span class="text-danger fw-bold">*</span></label>
+                        <input formControlName="Password" placeholder="Enter Password" type="password" class="form-control" id="Password">
+                        <small *ngIf="signupForm.get('Password')?.hasError('required') && signupForm.get('Password')?.touched && signupForm.get('Password')?.invalid" class="text-danger">password is required</small>
+                         <small *ngIf="signupForm.get('Password')?.hasError('pattern') && signupForm.get('Password')?.touched && signupForm.get('Password')?.invalid" class="text-danger">Password should have 1 uppercase alphabet,1 lowercase alphabet,1 special char , 1 number and minimum password length 9 chars </small>
+                      </div>
+                    <button type="submit" [disabled]="!signupForm.valid" class="btn btn-primary">Signup</button>
+                </form>
+                <a routerLink="/login" >alredy registerd user ? then click here to login</a>
+            </div>
+        </div>
+    </div>
+</div>

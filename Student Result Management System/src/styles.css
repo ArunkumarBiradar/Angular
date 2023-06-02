@@ -1,0 +1,12 @@
+*{
+    font-family:'Times New Roman', Times, serif ;
+}
+.home{
+display: inline-block;
+margin-left: 1%;
+}
+.navtitle{
+    display: inline-block;
+    text-align: center;
+    margin-left: 28%;
+}

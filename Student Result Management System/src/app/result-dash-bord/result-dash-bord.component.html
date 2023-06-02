@@ -1,0 +1,103 @@
+
+<div class="d-flex flex-row-reverse my-1">
+    <button (click)="logout()" class="btn btn-danger"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"/>
+        <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
+      </svg> Logout</button>&nbsp;
+    <button type="button" (click)="clickAddStudent()" class="btn btn-success" data-bs-toggle="modal"
+        data-bs-target="#exampleModal"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-add" viewBox="0 0 16 16">
+            <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
+            <path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z"/>
+          </svg> Add
+        Student</button>&nbsp;
+    <a routerLink="/signup" class="btn btn-warning"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-add" viewBox="0 0 16 16">
+        <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
+        <path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z"/>
+      </svg> Add Teacher</a>
+
+</div>
+<table class="table table-striped shadow-sm">
+    <thead class="table-dark">
+        <tr>
+
+            <th class="text-center">Name</th>
+            <th class="text-center">D.O.B</th>
+            <th class="text-center">RollNo</th>
+            <th class="text-center">Marks(600)</th>
+            <th class="text-center">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of allStudentData;">
+
+            <td class="text-center">{{data.Name}}</td>
+            <td class="text-center">{{data.DOB}}</td>
+            <td class="text-center">{{data.RollNo}}</td>
+            <td class="text-center">{{data.Marks}}</td>
+            <td class="text-center">
+                <button (click)="onEditStudents(data)" type="button" class="btn btn-info" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                        <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+                      </svg></button> &nbsp;
+                <button (click)="deleteStudent(data)" class="btn btn-danger"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                    <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                  </svg></button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5 text-center" *ngIf="showAdd" id="exampleModalLabel">Add Student Record</h1>
+                <h1 class="modal-title fs-5 text-center" *ngIf="showBtn" id="exampleModalLabel">Edit Student Record</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+                <p class="text-danger fw-bold text-center">( * ) fields are mandatory</p>
+            <div class="modal-body">
+
+                <form [formGroup]="formValue">
+                    <div class="mb-3">
+                        <label for="Name" class="form-label">Name <span class="text-danger fw-bold">*</span></label>
+                        <input type="text" formControlName="Name" class="form-control" id="Name" required>
+                        <small *ngIf="formValue.get('Name')?.hasError('required') && formValue.get('Name')?.touched && formValue.get('Name')?.invalid" class="text-danger">Name is required</small>
+                        <small *ngIf="formValue.get('Name')?.hasError('minlength') && formValue.get('Name')?.touched && formValue.get('Name')?.invalid" class="text-danger">Name should be greater then 3 chars</small>
+                        
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="DOB" class="form-label">D.O.B <span class="text-danger fw-bold">*</span></label>
+                        <input type="date" formControlName="DOB" class="form-control" id="DOB" required>
+                        <small *ngIf="formValue.get('DOB')?.invalid && formValue.get('DOB')?.touched" class="text-danger">D.O.B is required</small>
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="RollNo" class="form-label">RollNo <span class="text-danger fw-bold">*</span></label>
+                        <input type="number" formControlName="RollNo" class="form-control" id="RollNo" required>
+                        <small *ngIf="formValue.get('RollNo')?.invalid && formValue.get('RollNo')?.touched" class="text-danger">RollNo is required</small>
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="Marks" class="form-label">Marks(600)<span class="text-danger fw-bold">*</span></label>
+                        <input type="number" formControlName="Marks" class="form-control" id="Marks" required>
+                        <small *ngIf="formValue.get('Marks')?.hasError('required')&&formValue.get('Marks')?.invalid && formValue.get('Marks')?.touched" class="text-danger">Marks is required</small>
+                        <small *ngIf="formValue.get('Marks')?.hasError('max')&&formValue.get('Marks')?.invalid && formValue.get('Marks')?.touched" class="text-danger">Marks should be less then 600</small>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button *ngIf="showAdd" [disabled]="!formValue.valid" type="button" class="btn btn-primary" (click)=" addStudent()">Add
+                            Details</button>
+                        <button *ngIf="showBtn" [disabled]="!formValue.valid" type="button" class="btn btn-primary" (click)="updateStudent()">Update
+                            Details</button>
+                        
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

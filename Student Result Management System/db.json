@@ -1,0 +1,59 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "DOB": "1999-11-08",
+      "Name": "Arunkumar Biradar",
+      "RollNo": 1,
+      "Marks": 550
+    },
+    {
+      "id": 2,
+      "DOB": "1999-11-30",
+      "Name": "Danish",
+      "RollNo": 2,
+      "Marks": 600
+    },
+    {
+      "id": 3,
+      "DOB": "2000-10-05",
+      "Name": "Mahika",
+      "RollNo": 3,
+      "Marks": 400
+    },
+    {
+      "id": 5,
+      "DOB": "2000-03-16",
+      "Name": "Gopi",
+      "RollNo": 5,
+      "Marks": 430
+    },
+    {
+      "id": 6,
+      "DOB": "2000-07-13",
+      "Name": "Amit",
+      "RollNo": 6,
+      "Marks": 440
+    },
+    {
+      "id": 4,
+      "DOB": "1999-07-08",
+      "Name": "Arya",
+      "RollNo": 4,
+      "Marks": 350
+    }
+  ],
+  "signup": [
+    {
+      "Name": "Arunkumar Biradar",
+      "Email": "arunkumar.biradar@nagarro.com",
+      "MobileNo": "1234567890",
+      "Password": "arun123",
+      "id": 1
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
